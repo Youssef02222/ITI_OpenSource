@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title> My Form </title>
+    <base href="/">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body align='center'>
+<header>
+    <h1 style="font-family: Forte;font-size: 35px;color: #775740">Register form</h1>
+</header>
+
+<form action="/register" method="POST" class="login">
+
+        <label>Usrname</label>
+        <input class="input" type ="text" id = 'username' name="username" placeholder="username.." required>
+        <br><br>
+
+        <label>Email ID</label>
+        <input class="input" type ="email" id = 'email' name="email" placeholder="email.." required>
+        <br><br>
+
+        <label>Password</label>
+        <input class="input" type="password" id = "password" name="password" required>
+        <br><br>
+
+        <button class="button" type ="reset">Reset</button>
+        <button class="button" type ="submit">Submit</button>
+
+</form>
+<br><br>
+<a class="button" href="./login.html">go to login page</a>
+
+</body>
+</html>
