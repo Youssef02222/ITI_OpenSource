@@ -1,0 +1,10 @@
+BEGIN{
+FS=":"
+}
+
+{ 
+ID=$1 
+DATE=$2 
+NAME=$3 
+TOTAL=$4 
+printf("DELETE FROM %s.%s;"),DATABASE,T1 }

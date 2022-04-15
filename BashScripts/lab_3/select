@@ -1,0 +1,10 @@
+BEGIN{
+FS=":"
+}
+
+END{ 
+ID=$1 
+DATE=$2 
+NAME=$3 
+TOTAL=$4 
+printf("SELECT * FROM %s.%s;"),DATABASE,T1 }
