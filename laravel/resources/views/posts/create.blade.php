@@ -8,7 +8,7 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
                 
-                <input type="text" class="form-control" id="exampleFormControlInput1" value="{{ isset($post) ? $post['title'] : '' }}">
+                <input type="text"  class="form-control" id="exampleFormControlInput1" value="{{ isset($post) ? $post['title'] : '' }}">
             </div>
             
             <div class="mb-3">
