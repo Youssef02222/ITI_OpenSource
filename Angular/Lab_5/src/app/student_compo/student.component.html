@@ -1,0 +1,22 @@
+<p>student works!</p>
+<h1>my full name is {{getFullName()}} </h1>
+<button type="button" (click)="setFirstName('Ibrahem')">complete the name</button>
+<input #t1 type="text">
+<button (click)="setFirstName(t1.value)">apply</button>
+
+<button class="btn btn-success">hello</button>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>DepNo</th>    
+    </tr>
+    <tr>
+        <td>Ahmed</td>
+        <td>2</td>
+        <td>2</td>
+    </tr>
+</table>
+
+<input [(ngModel)]="LastName" type="text">

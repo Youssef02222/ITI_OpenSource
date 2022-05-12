@@ -1,0 +1,58 @@
+<p>department works!</p>
+
+
+<input type="text" [(ngModel)]="ndept.id">
+<input type="text" [(ngModel)]="ndept.name">
+<input type="text" [(ngModel)]="ndept.capacity">
+<button class="btn btn-success" (click)="add()"> Add </button><br>
+
+<label style="margin:0px 650px ;" >{{date | date:'fullDate'}}</label>
+<br>
+<table class="table table-bordered table-hover">
+    
+    <thead>
+        <tr>
+            <td>#</td>
+            <th>ID</th>
+            <th>Name </th>
+            <th>Capacity</th>
+            <th>operation</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of depts;let d=index;let currentIndex=index">
+        <td>{{d+1}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.name | titlecase}}</td>
+        <td>{{item.capacity}}</td>
+        <td><button class="btn btn-danger mx-2" (click)="delete(currentIndex)">delete</button> <button class="btn btn-success mx-2" (click)="show(item.id)">show</button>  <button type="button" (click)="edit2(item)" class="btn btn-primary">Edit</button></td>
+
+        <td></td>
+    
+    <ng-container *ngIf="item.isEditing">
+      <td>{{item.id}}</td>
+      <td>
+        <div class="col-12">
+          <label class="visually-hidden" [for]="'department_name_' + item.id">Name</label>
+          <input [(ngModel)]="item.name" type="text" class="form-control" [id]="'department_name_' + item.id" [name]="'department_name_' + item.id" placeholder="Name">
+        </div>
+      </td>
+      <td>
+        <div class="col-12">
+          <label class="visually-hidden" [for]="'department_location_' + item.id">Location</label>
+          <input [(ngModel)]="item.capacity" type="text" class="form-control" [id]="'department_location_' + item.id" [name]="'department_location_' + item.id" placeholder="Location">
+        </div>
+      </td>
+      <td>
+        <button (click)="save(item)" class="btn btn-success">Save</button>
+      </td>
+    </ng-container>
+    </tr>
+</tbody>
+</table>
+
+<div class="d-inline p-2 bg-primary text-white">{{dept.name}} </div>
+<div class="d-inline p-2 bg-dark text-white">{{dept.capacity}}</div>
+
+
+
