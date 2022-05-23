@@ -1,0 +1,20 @@
+
+.my-image-div{ 
+	background-image: url("../public/images/cover.png"); 
+	background-size: cover; 
+	height: 500px; 
+	width: 600px; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
+.my-image-text{ 
+	position: relative; 
+	top: 430px; 
+  color: aliceblue;
+  font-size: 50px;
+  /* text-align: center; */
+} 
+.my-image-text:hover .nav-div:hover {
+  text-decoration: underline;
+}
