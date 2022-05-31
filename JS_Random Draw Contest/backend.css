@@ -1,0 +1,228 @@
+@font-face {
+  font-family: "cairo";
+  src: url("fonts/Cairo-Regular.ttf") format("truetype");
+}
+* {
+  padding: 10px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-background: radial-gradient(#ffffff, #fffdfd);
+  -o-background: radial-gradient(#ffffff, #fffdfd);
+  -moz-background: radial-gradient(#ffffff, #fffdfd);
+  /* background: radial-gradient(#dad241bc, #eae8eae1); */
+  background-color: rgb(47, 199, 173);
+  background-repeat: no-repeat;
+  font-family: "cairo";
+  min-height: 10;
+  background-attachment: fixed;
+  height: 100%;
+  background-size: cover;
+}
+
+.container .all-winners {
+  display: flex;
+  flex-direction: row;
+  direction: rtl;
+  width: 40%;
+  float: right;
+}
+.container .all-winners table {
+  width: 550px;
+}
+.container .all-winners table {
+  border-collapse: collapse;
+  text-align: center;
+  -webkit-box-shadow: -3px -4px 6px #0000008c;
+  -o-box-shadow: -3px -4px 6px #0000008c;
+  -moz-box-shadow: -3px -4px 6px #0000008c;
+  box-shadow: -3px -4px 6px #0000008c;
+  cursor: pointer;
+  font-family: "cairo";
+}
+.container .all-winners table tr td {
+  border: 1px solid #fffefe;
+  color: #eee;
+}
+.container .all-winners table tr td:nth-child(1) {
+  -webkit-background: linear-gradient(#e1915e, #e1915e);
+  -o-background: linear-gradient(#e1915e, #e1915e);
+  -moz-background: linear-gradient(#e1915e, #e1915e);
+  background: linear-gradient(#e1915e, #e1915e);
+  width: 200px;
+}
+.container .all-winners table tr td:nth-child(2) {
+  -webkit-background: linear-gradient(#14a1c1, #14a1c1);
+  -o-background: linear-gradient(#14a1c1, #14a1c1);
+  -moz-background: linear-gradient(#14a1c1, #14a1c1);
+  background: linear-gradient(#14a1c1, #14a1c1);
+  font-weight: bold;
+  width: 350px;
+  text-align: center;
+}
+.container .participants-random {
+  width: 60%;
+  font-family: "cairo";
+  color: #4bb197;
+  margin-top: 100px;
+}
+.container .participants-random .participants-names {
+  width: 500px;
+  height: 100px;
+  -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-box-shadow: 2px 3px 0px #14a1c1;
+  -o-box-shadow: 2px 3px 0px #14a1c1;
+  -moz-box-shadow: 2px 3px 0px #14a1c1;
+  box-shadow: 2px 3px 0px #14a1c1;
+  border: 1px solid #14a1c1;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #14a1c1;
+  text-align: center;
+  font-size:25px;
+  padding: 25px 0 0px 5px;
+}
+.container .participants-random .button-choice button {
+  margin: 0 auto;
+  display: block;
+  -webkit-background: radial-gradient(#01245dd1, #01245dd1);
+  -o-background: radial-gradient(#01245dd1, #01245dd1);
+  -moz-background: radial-gradient(#01245dd1, #01245dd1);
+  background: radial-gradient(#01245dd1, #01245dd1);
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  width: 200px;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "cairo";
+  color: #eee;
+  margin-top: 20px;
+  -webkit-transition: background-image 0.4s ease-in-out;
+  -o-transition: background-image 0.4s ease-in-out;
+  -moz-transition: background-image 0.4s ease-in-out;
+  transition: background-image 0.4s ease-in-out;
+}
+.container .participants-random .button-choice button:hover {
+  -webkit-background: radial-gradient(#01245dd1, #01245d);
+  -o-background: radial-gradient(#01245dd1, #01245d);
+  -moz-background: radial-gradient(#01245dd1, #01245d);
+  background: radial-gradient(#01245dd1, #01245d);
+}
+.container .participants-random .counter {
+  color: #239276;
+  font-size: 30px;
+  -webkit-text-shadow: 0px 1px 7px black;
+  -o-text-shadow: 0px 1px 7px black;
+  -moz-text-shadow: 0px 1px 7px black;
+  text-shadow: 0px 1px 7px black;
+}
+.container header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  direction: rtl;
+  margin-top: -40px;
+}
+.container header .img-one {
+  width: 30%;
+}
+.container header .img-one img {
+  height: 200px;
+  width: 350px;
+}
+.container header .img-two {
+  width: 30%;
+}
+.container header .img-two img {
+  height: 200px;
+  width: 350px;
+  float: left;
+}
+.container header .competition-desc {
+  width: 60%;
+  text-align: center;
+}
+.container header .competition-desc span {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: "cairo";
+  color: #3f3d3e;
+  line-height: 4rem;
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+}
+
+div.shapy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+#table-print, #come-back {
+  outline: none;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: background-image 0.4s ease-in-out;
+  -o-transition: background-image 0.4s ease-in-out;
+  -moz-transition: background-image 0.4s ease-in-out;
+  transition: background-image 0.4s ease-in-out;
+}
+
+#come-back {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 12;
+  display: none;
+  font-size: 17px;
+  font-family: "cairo";
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #e1915e;
+  color: #eee;
+}
+#come-back:hover {
+  -webkit-background: radial-gradient(#c3a089, #b77c58);
+  -o-background: radial-gradient(#c3a089, #b77c58);
+  -moz-background: radial-gradient(#c3a089, #b77c58);
+  background: radial-gradient(#c3a089, #b77c58);
+}
+
+#table-print {
+  background-color: #e1915e;
+  font-size: 17px;
+  font-family: "cairo";
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  color: #eee;
+}
+#table-print:hover {
+  -webkit-background: radial-gradient(#c3a089, #b77c58);
+  -o-background: radial-gradient(#c3a089, #b77c58);
+  -moz-background: radial-gradient(#c3a089, #b77c58);
+  background: radial-gradient(#c3a089, #b77c58);
+}
+
+/*# sourceMappingURL=backend.css.map */
