@@ -1,23 +1,23 @@
-def prob1(str,n)
-    puts str*n
+def prob1(text,n)
+    puts text*n
 end 
 
-def prob2(str)
-    if str.start_with?("if") 
+def prob2(text)
+    if text.start_with?("if") 
         puts "true"
     else 
         puts "false"
     end
 end
 
-def prob3(str)
-    print str[-1] << str[1...-1]  << str [0]
+def prob3(text)
+    print text[-1] << text[1...-1]  << text [0]
 end 
 
-def prob4(str)
-    last_ch= str.length() -1 
-    # print str.split('')[last_ch]
-    print  str.split('')[last_ch] + str + str.split('')[last_ch];
+def prob4(text)
+    last_ch= text.length() -1 
+    # print text.split('')[last_ch]
+    print  text.split('')[last_ch] + text + text.split('')[last_ch];
 end     
 
 def prob6(nums)
@@ -49,5 +49,3 @@ def prob7(nums)
      end
         return sum
  end
-
-
