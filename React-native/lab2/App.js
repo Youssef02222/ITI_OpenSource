@@ -31,9 +31,9 @@ export default function App() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
-        <Tab.Navigator>
+        <Tab.Navigator >
           <Tab.Screen
-            options={() => ({tabBarIcon: () => <AntDesign name={"car"} size={20} color={"white"}/>})}
+            options={() => ({tabBarIcon: () => <AntDesign name={"car"} size={20} color={"black"}/>})}
             name="Cars"
             component={CarsStack}/>
           <Tab.Screen
