@@ -1,0 +1,12 @@
+     <%= @book.name  %> <br>
+             price:<%= @book.price  %> <br>
+             description:<%= @book.description  %> <br>
+             creator:<%= link_to @book.admin.name , @book.admin %> <br>
+             <%# Image: <%= image_tag @book.image.variant(:thumb) %> 
+             <%= image_tag(@book.image,style:'height:500px;width:500px;margin-bottom:20px;') %>  <br>
+             <button><%= link_to 'Delete',book_path(@book),data:{
+             turbo_method: :delete , 
+             turbo_confirm: "Are you sure you want to delete this book"
+             
+             }%></button>
+             <Button><%= link_to 'Edit', edit_book_path(@book) %></Button>

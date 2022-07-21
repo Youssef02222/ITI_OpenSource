@@ -1,0 +1,31 @@
+<h1>Books</h1>
+<% if can? :create , @books   %>
+<button><%= link_to "Create", new_book_path  %></button>
+<% end%>
+<ul>
+    <% @books.each do |book| %>
+        <li>
+             <%= book.name  %> <br>
+             price:<%= book.price  %> <br>
+             description:<%= book.description  %> <br>
+             creator:<%= link_to book.admin.name , book.admin %> <br>
+             <td>
+                <%= link_to "show", book %>
+             </td>
+             <td>
+                <% if can? :update, book %>
+                <%= link_to "Edit", edit_book_path(book) %>
+                <% end %>
+             </td>
+
+             <td>
+                <% if can? :delete, book %>
+                <button><%= link_to 'Delete',book_path(book),data:{
+                turbo_method: :delete , 
+                turbo_confirm: "Are you sure you want to delete this book"
+                }%></button>
+                <% end %>
+             </td>
+        </li>
+    <% end %>
+</ul>
