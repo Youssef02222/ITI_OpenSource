@@ -1,0 +1,259 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "APIs for Balance Indicators.",
+      "version": "1.0",
+      "title": "Balance Indicators APIs",
+      "termsOfService": "Terms of service",
+      "contact": {
+        "name": "Youssef Ibrahim",
+        "email": "youssef_salama@rayacorp.com"
+      },
+      "license": {
+        "name": "License of API",
+        "url": "API license URL"
+      }
+    },
+    "host": "localhost:8081",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "balances-with-ind-controller",
+        "description": "Balances With IND Controller"
+      }
+    ],
+    "paths": {
+      "/getBalances": {
+        "get": {
+          "tags": [
+            "balances-with-ind-controller"
+          ],
+          "summary": "getBalances",
+          "operationId": "getBalancesUsingGET",
+          "produces": [
+            "*/*"
+          ],
+          "parameters": [
+            {
+              "name": "terminalId",
+              "in": "query",
+              "description": "terminalId",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/BalancesWithINDResponseDto"
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      },
+      "/merchantMonthlySalesReport": {
+        "post": {
+          "tags": [
+            "balances-with-ind-controller"
+          ],
+          "summary": "getMerchantMonthlySalesReport",
+          "operationId": "getMerchantMonthlySalesReportUsingPOST",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "*/*"
+          ],
+          "parameters": [
+            {
+              "name": "isWallet",
+              "in": "query",
+              "description": "isWallet",
+              "required": false,
+              "type": "boolean",
+              "default": false
+            },
+            {
+              "in": "body",
+              "name": "reportRequestDto",
+              "description": "reportRequestDto",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/ReportRequestDto"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/MerchantReportResponseDto"
+              }
+            },
+            "201": {
+              "description": "Created"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            },
+            "404": {
+              "description": "Not Found"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "BalanceWithIND": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "number",
+            "format": "double"
+          },
+          "indicator": {
+            "type": "string"
+          }
+        },
+        "title": "BalanceWithIND"
+      },
+      "BalancesWithINDResponseDto": {
+        "type": "object",
+        "properties": {
+          "balanceWithIND": {
+            "$ref": "#/definitions/BalanceWithIND"
+          },
+          "responseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/definitions/Status"
+          }
+        },
+        "title": "BalancesWithINDResponseDto"
+      },
+      "MerchantReportDto": {
+        "type": "object",
+        "properties": {
+          "accountNumber": {
+            "type": "string"
+          },
+          "cashinWallets": {
+            "type": "number"
+          },
+          "currentBalance": {
+            "type": "number"
+          },
+          "elseServices": {
+            "type": "number"
+          },
+          "indicator": {
+            "type": "string"
+          },
+          "totalTransactionsAmount": {
+            "type": "number"
+          },
+          "totalTransfersFrom": {
+            "type": "number"
+          },
+          "totalTransfersTo": {
+            "type": "number"
+          },
+          "trxDate": {
+            "type": "string"
+          }
+        },
+        "title": "MerchantReportDto"
+      },
+      "MerchantReportResponseDto": {
+        "type": "object",
+        "properties": {
+          "merchantsTransactionsData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/MerchantReportDto"
+            }
+          },
+          "responseDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/definitions/Status"
+          }
+        },
+        "title": "MerchantReportResponseDto"
+      },
+      "ReportRequestDto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "dateFrom": {
+            "type": "string"
+          },
+          "dateTo": {
+            "type": "string"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pin": {
+            "type": "string"
+          },
+          "pinCheckingFlag": {
+            "type": "boolean"
+          },
+          "referenceNumber": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "terminalId": {
+            "type": "string"
+          },
+          "transactionRequestId": {
+            "type": "string"
+          },
+          "utrnno": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "title": "ReportRequestDto"
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "title": "Status"
+      }
+    }
+  }
